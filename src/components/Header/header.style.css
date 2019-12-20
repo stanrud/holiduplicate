@@ -1,0 +1,39 @@
+.header {
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #ffcf43;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
+}
+
+.logo-txt{ 
+  margin: 2rem;
+  font-size: 30px;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.search-form {
+  width: 30%;
+}
+
+.search-txt:focus {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.search-txt {
+  height: 2rem;
+  width: 50%;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.5s;
+}
