@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { fetchOffers } from '../../actions/offer';
+import Card from '../../components/CardUI';
+import './offers.style.css';
 
 class Offers extends Component {
   componentDidMount() {
@@ -9,16 +11,21 @@ class Offers extends Component {
   }
 
   render() {
+    const { offers } = this.props;
     return (
-      <div>
-        Offers
-      </div>
+      <React.Fragment>
+        <div className='container-offers'>
+          {offers && offers.map(item => 
+            <Card offer={item} />
+          )}
+        </div>
+      </React.Fragment>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  offers: state.offers
+  offers: state.offersStore.offers
 });
 
 export default connect(mapStateToProps)(Offers);
