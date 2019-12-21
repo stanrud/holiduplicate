@@ -6,16 +6,17 @@ import {
 } from 'react-router-dom';
 import Offers from './pages/offers';
 import OfferDetails from './pages/offerDetails';
-import Header from './components/Header';
+import Main from './components/containers/Main';
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path="/" exact component={Offers} />
-        <Route path="/offer" exact component={OfferDetails} />
-      </Switch>
+      <Main>
+        <Switch>
+          <Route path="/" exact component={Offers} />
+          <Route path="/offer/:id" exact component={OfferDetails} />
+        </Switch>
+      </Main>
     </Router>
   );
 }
