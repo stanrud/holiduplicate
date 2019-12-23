@@ -3,7 +3,7 @@ import * as types from '../actionTypes/offer';
 const defaultState = {
   isFetching: false,
   offers: [],
-  offer: {}
+  offer: { photos: [] }
 }
 
 export default (state = defaultState, action = {}) => {
@@ -11,19 +11,45 @@ export default (state = defaultState, action = {}) => {
     case types.FETCH_OFFERS: {
       return {
         ...state,
-        isFetching: true
+        isFetching: true,
+        page: action.page,
+        search: action.search
       }
     }
 
     case types.FETCH_OFFERS_SUCCES: {
       return {
         ...state,
-        offers: action.data,
+        offers: [...state.offers, ...action.data],
         isFetching: false
       }
     }
 
     case types.FETCH_OFFERS_FAILED: {
+      return {
+        ...state,
+        isFetching: false,
+        error: action.error
+      }
+    }
+
+    case types.FETCH_OFFER_DETAILS: {
+      return {
+        ...state,
+        isFetching: true,
+        offer: defaultState.offer
+      }
+    }
+
+    case types.FETCH_OFFER_DETAILS_SUCCES: {
+      return {
+        ...state,
+        offer: action.data,
+        isFetching: false
+      }
+    }
+
+    case types.FETCH_OFFER_DETAILS_FAILED: {
       return {
         ...state,
         isFetching: false,

@@ -1,8 +1,10 @@
 import * as types from '../actionTypes/offer';
 
-export function fetchOffers() {
+export function fetchOffers(page = 0, search = 'Mallorca, Spanien') {
   return {
-    type: types.FETCH_OFFERS
+    type: types.FETCH_OFFERS,
+    page,
+    search
   }
 }
 
@@ -16,6 +18,27 @@ export function fetchOffersSuceess(data) {
 export function fetchOffersFailed(error) {
   return {
     type: types.FETCH_OFFERS_FAILED,
+    error
+  }
+}
+
+export function fetchOfferDetails(id) {
+  return {
+    type: types.FETCH_OFFER_DETAILS,
+    id
+  }
+}
+
+export function fetchOfferDetailsSuceess(data) {
+  return {
+    type: types.FETCH_OFFER_DETAILS_SUCCES,
+    data
+  }
+}
+
+export function fetchOfferDetailsFailed(error) {
+  return {
+    type: types.FETCH_OFFER_DETAILS_FAILED,
     error
   }
 }
