@@ -13,6 +13,18 @@ const CardUI = props => {
           <div className='body-name'>
             <span>{props.offer.details.name}</span>
           </div>
+          <div className='body-details'>
+            Bedrooms: {props.offer.details.bedroomsCount}
+          </div>
+          <div className='body-details'>
+            Guests: {props.offer.details.guestsCount}
+          </div>
+          <div className='body-details'>
+            Price: {props.offer.price.daily} {props.offer.price.currency}
+          </div>
+          <div className='body-details'>
+            Rating: {props.offer.rating.value} ({props.offer.rating.count})
+          </div>
         </div>
       </div>
     </Link>

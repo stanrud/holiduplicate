@@ -42,3 +42,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.body-details {
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
