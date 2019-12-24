@@ -1,0 +1,9 @@
+.container-o {
+  width: 992px;
+}
+
+.offer-container {
+  display: flex;
+  justify-content: left;
+  margin: 1rem;
+}

@@ -1,0 +1,10 @@
+.btn-slider {
+  background-color: transparent;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 24px;
+  border-width: 0px;
+  outline: 0px;
+}
