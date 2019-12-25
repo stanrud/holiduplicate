@@ -3,7 +3,8 @@ import * as types from '../actionTypes/offer';
 const defaultState = {
   isFetching: false,
   offers: [],
-  offer: { photos: [] }
+  offer: { photos: [] },
+  total: 0
 }
 
 export default (state = defaultState, action = {}) => {
@@ -20,7 +21,8 @@ export default (state = defaultState, action = {}) => {
     case types.FETCH_OFFERS_SUCCES: {
       return {
         ...state,
-        offers: [...state.offers, ...action.data],
+        offers: [...state.offers, ...action.data.offers],
+        total: action.data.metaData.cursor.totalCount,
         isFetching: false
       }
     }

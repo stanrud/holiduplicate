@@ -18,7 +18,7 @@ async function fetchOffersCall({ search, page }) {
 function* fetchOffers(action) {
   try {
     const offers = yield call(fetchOffersCall, action);
-    yield put(fetchOffersSuceess(offers.data.offers));
+    yield put(fetchOffersSuceess(offers.data));
   } catch (e) {
     yield put(fetchOffersFailed(e));
   }
