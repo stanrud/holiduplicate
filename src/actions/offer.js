@@ -42,3 +42,16 @@ export function fetchOfferDetailsFailed(error) {
     error
   }
 }
+
+export function setInitialize() {
+  return {
+    type: types.SET_INITIALIZE
+  }
+}
+
+export function setPage(page) {
+  return {
+    type: types.SET_PAGE_INDEX,
+    page
+  }
+}

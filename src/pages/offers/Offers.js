@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchOffers } from '../../actions/offer';
+import { fetchOffers, setPage, setInitialize } from '../../actions/offer';
 import Card from '../../components/CardUI';
 import InfiniteScroll from '../../components/InfinityScroll';
 import './offers.style.css';
 
-const Offers = ({ offers, dispatch, isFetching, total }) => {
-  const [page, setPage] = useState(0);
-  const [initialized, setInitialized] = useState(false);
-
-  useEffect(() => {
-    if (!initialized) loadMore();
-  });
-
-  function loadMore() {
-    dispatch(fetchOffers(page));
-    setPage(page + 1);
-    setInitialized(true);
+const Offers = ({ offers, dispatch, isFetching, total, isInitialized, page, match }) => {
+  const loadMore = () => {
+    const { search } = match.params;
+    dispatch(fetchOffers(page, search));
+    dispatch(setPage(page + 1));
+    dispatch(setInitialize());
   }
+
+  // eslint-disable-next-line
+  useEffect(() => { !isInitialized && loadMore() }, []);
 
   return (
     <InfiniteScroll
@@ -26,7 +23,7 @@ const Offers = ({ offers, dispatch, isFetching, total }) => {
       hasMore={total > offers.length}
     >
       <div className='container-offers'>
-        { offers.map(item => <Card offer={item} key={item.id} />) }
+        {offers.map(item => <Card item={item} key={item.id} />)}
       </div>
     </InfiniteScroll>
   )
@@ -35,7 +32,9 @@ const Offers = ({ offers, dispatch, isFetching, total }) => {
 const mapStateToProps = state => ({
   offers: state.offersStore.offers,
   isFetching: state.offersStore.isFetching,
-  total: state.offersStore.total
+  isInitialized: state.offersStore.isInitialized,
+  total: state.offersStore.total,
+  page: state.offersStore.page
 });
 
 export default connect(mapStateToProps)(Offers);

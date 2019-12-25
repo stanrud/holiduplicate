@@ -2,9 +2,20 @@ import * as types from '../actionTypes/offer';
 
 const defaultState = {
   isFetching: false,
+  isInitialized: false,
   offers: [],
-  offer: { photos: [] },
-  total: 0
+  offer: {
+    photos: [],
+    location: {},
+    details: {},
+    rating: {},
+    price: {},
+    amenities: {
+      AMENITY_GENERAL: []
+    }
+  },
+  total: 0,
+  page: 0
 }
 
 export default (state = defaultState, action = {}) => {
@@ -56,6 +67,20 @@ export default (state = defaultState, action = {}) => {
         ...state,
         isFetching: false,
         error: action.error
+      }
+    }
+
+    case types.SET_INITIALIZE: {
+      return {
+        ...state,
+        isInitialized: true
+      }
+    }
+
+    case types.SET_PAGE_INDEX: {
+      return {
+        ...state,
+        page: action.page
       }
     }
 
