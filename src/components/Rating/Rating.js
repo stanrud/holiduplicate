@@ -24,7 +24,7 @@ const Rating = ({ value, count }) => (
       </div>
     }
   </React.Fragment>
-)
+);
 
 Rating.propTypes = {
   value: PropTypes.number,

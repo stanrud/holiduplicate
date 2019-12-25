@@ -23,6 +23,6 @@ const ImageCarousel = ({ photos }) => (
   >
     {photos.length > 0 && photos.map(f => <img src={f.m} alt={f.name} />)}
   </Carousel>
-)
+);
 
 export default ImageCarousel;

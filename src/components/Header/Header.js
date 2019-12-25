@@ -4,15 +4,15 @@ import history from '../../routes/history';
 import './header.style.css';
 
 const Header = () => {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('');
   
-  function handleChange(e) {
+  const handleChange = (e) => {
     setSearch(e.target.value);
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     history.push(`/search/${search}`, search);
-  }
+  };
 
   return (
     <div className='header'>
