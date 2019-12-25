@@ -1,14 +1,15 @@
 .header {
-    height: 4rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    background-color: #ffcf43;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
+  z-index: 1000;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #ffcf43;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
 }
 
 .logo-txt{ 
