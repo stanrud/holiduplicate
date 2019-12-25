@@ -3,7 +3,7 @@ import Infinity from 'react-infinite-scroller';
 import { BeatLoader } from 'react-spinners';
 import './infinity-scroll.style.css';
 
-const InfiniteScroll = ({ children, loadMore, isFetching, total, hasMore }) => (
+const InfiniteScroll = ({ children, loadMore, isFetching, hasMore }) => (
   <Infinity
     pageStart={0}
     loadMore={isFetching ? () => {} : loadMore}

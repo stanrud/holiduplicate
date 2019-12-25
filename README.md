@@ -1,6 +1,7 @@
 # PROJECT HOLIDUPLICATE
 
-Thi is my test task project.
+This is my test task project.
+
 The project was also deployed on the heroku server for live presentation. [DEMO](http://holidu.herokuapp.com/)
 
 ![holiduplicate-gif](https://github.com/stanrud/holiduplicate/blob/master/holiduplicate.gif)

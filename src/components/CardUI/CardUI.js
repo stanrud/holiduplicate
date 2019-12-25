@@ -4,36 +4,35 @@ import Rating from '../Rating';
 import { FaBed, FaUserFriends, FaMapPin } from 'react-icons/fa';
 import "./card-ui.style.css";
  
-const CardUI = ({ offer }) => (
-  <Link to={`/offer/${offer.id}`} style={{ textDecoration: 'none' }}>
+const CardUI = ({ item }) => (
+  <Link to={`/offer/${item.id}`} style={{ textDecoration: 'none' }}>
     <div className='card'>
       <div className='img-container'>
-        <img src={offer.photos[0].m} alt={offer.details.name} className='card-img' />
+        <img src={item.photos[0].m} alt={item.details.name} className='card-img' />
         <div className='card-location'>
-          <FaMapPin />{offer.location.name}
+          <FaMapPin />{item.location.name}
         </div>
       </div>
       <div className='card-body'>
         <div className='body-name'>
-          <span>{offer.details.name}</span>
+          <span>{item.details.name}</span>
         </div>
         <div className='body-details'>
           <div className='room-details'>
             <div className='details-berdrooms'>
-              <FaBed /> {offer.details.bedroomsCount} Bedrooms
+              <FaBed /> {item.details.bedroomsCount} Bedrooms
             </div>
             <div className='details-guests'>
-              <FaUserFriends /> {offer.details.guestsCount} Guests
+              <FaUserFriends /> {item.details.guestsCount} Guests
             </div>
-            <Rating value={offer.rating.value} count={offer.rating.count} />
+            <Rating value={item.rating.value} count={item.rating.count} />
           </div>
           <div className='details-price'>
-            <div className='price-from'>
-              from
-            </div>
+            from
             <div className='price-currency'>
-              {offer.price.daily} {offer.price.currency}
+              {item.price.daily} {item.price.currency}
             </div>
+            per night
           </div>
         </div>
       </div>

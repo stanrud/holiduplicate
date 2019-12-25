@@ -1,0 +1,12 @@
+.amenities {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.amenity {
+  margin: 0.2rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+  color: #FFF;
+  background-color: #ffcf43;
+  border-radius: 1rem;
+}
