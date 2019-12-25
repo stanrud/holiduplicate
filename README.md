@@ -3,7 +3,7 @@
 Thi is my test task project.
 The project was also deployed on the heroku server for live presentation. [DEMO](http://holidu.herokuapp.com/)
 
-![holiduplicate-gif](https://im4.ezgif.com/tmp/ezgif-4-c05d86354701.gif)
+![holiduplicate-gif](https://github.com/stanrud/holiduplicate/blob/master/holiduplicate.gif)
 
 ## Install
 
